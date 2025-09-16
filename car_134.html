@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Hyundai Elantra (2016–2019)</title>
+  <link rel="stylesheet" href="../assets/style.css"/>
+</head>
+<body class="detail">
+  <header class="topbar">
+    <a class="back" href="../index.html">← Каталог</a>
+    <div class="brand">Hyundai Elantra (2016–2019)</div>
+  </header>
+  <main class="wrap">
+    <section class="gallery">
+      <div class="slider" id="slider">
+        <div class="slide active"><img loading="lazy" src="https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0725/18a2f5fe984044ba89c29f148d9d93ae_hrs.jpg" alt="Фото 1"/></div>
+<div class="slide"><img loading="lazy" src="https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0725/d469056bc5a64e1681e989e222f07c3d_hrs.jpg" alt="Фото 2"/></div>
+<div class="slide"><img loading="lazy" src="https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0725/859ece4053524fa6b4d683e583c04d0d_hrs.jpg" alt="Фото 3"/></div>
+<div class="slide"><img loading="lazy" src="https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0725/8935257ba0124702924c0fd559a5bf53_hrs.jpg" alt="Фото 4"/></div>
+<div class="slide"><img loading="lazy" src="https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0725/77e6361a24a74cccae6d55932837693c_hrs.jpg" alt="Фото 5"/></div>
+        <div class="nav">
+          <button id="prev">‹</button>
+          <button id="next">›</button>
+        </div>
+      </div>
+      <div class="thumbs" id="thumbs"><img class="active" data-idx="0" loading="lazy" src="https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0725/18a2f5fe984044ba89c29f148d9d93ae_hrs.jpg" alt="thumb 1"/>
+<img data-idx="1" loading="lazy" src="https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0725/d469056bc5a64e1681e989e222f07c3d_hrs.jpg" alt="thumb 2"/>
+<img data-idx="2" loading="lazy" src="https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0725/859ece4053524fa6b4d683e583c04d0d_hrs.jpg" alt="thumb 3"/>
+<img data-idx="3" loading="lazy" src="https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0725/8935257ba0124702924c0fd559a5bf53_hrs.jpg" alt="thumb 4"/>
+<img data-idx="4" loading="lazy" src="https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0725/77e6361a24a74cccae6d55932837693c_hrs.jpg" alt="thumb 5"/></div>
+    </section>
+    <section class="specs">
+      <div class="pills"><span class="pill">sedan</span><span class="pill">petrol</span><span class="pill">Бюджет: 10000-15000</span></div>
+      <table class="table">
+        <tr><th>Кузов</th><td>sedan</td></tr>
+        <tr><th>Топливо</th><td>petrol</td></tr>
+        <tr><th>Привод</th><td></td></tr>
+        <tr><th>Регион</th><td></td></tr>
+        <tr><th>Бюджет</th><td>10000-15000</td></tr>
+      </table>
+    </section>
+  </main>
+<script>
+(function(){
+  const slides=[...document.querySelectorAll('.slide')];
+  const thumbs=[...document.querySelectorAll('.thumbs img')];
+  let i=0;
+  const show=(n)=>{i=(n+slides.length)%slides.length;slides.forEach((s,j)=>s.classList.toggle('active',j===i));thumbs.forEach((t,j)=>t.classList.toggle('active',j===i));};
+  document.getElementById('prev').addEventListener('click',()=>show(i-1));
+  document.getElementById('next').addEventListener('click',()=>show(i+1));
+  thumbs.forEach(t=>t.addEventListener('click',()=>show(parseInt(t.dataset.idx,10))));
+  show(0);
+})();
+</script>
+</body>
+</html>

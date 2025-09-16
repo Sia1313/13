@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Ford Focus (2016–2018)</title>
+  <link rel="stylesheet" href="../assets/style.css"/>
+</head>
+<body class="detail">
+  <header class="topbar">
+    <a class="back" href="../index.html">← Каталог</a>
+    <div class="brand">Ford Focus (2016–2018)</div>
+  </header>
+  <main class="wrap">
+    <section class="gallery">
+      <div class="slider" id="slider">
+        <div class="slide active"><img loading="lazy" src="https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0525/810eca1fce644292afedbae57583156b_hrs.jpg" alt="Фото 1"/></div>
+<div class="slide"><img loading="lazy" src="https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0525/d6f5056cd1754e629ff5426b41754806_hrs.jpg" alt="Фото 2"/></div>
+<div class="slide"><img loading="lazy" src="https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0525/501ec2f2e8c64aba80c6bb5ae771a854_hrs.jpg" alt="Фото 3"/></div>
+<div class="slide"><img loading="lazy" src="https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0525/0a908ea839e04285a5ac6f1cf0ed1931_hrs.jpg" alt="Фото 4"/></div>
+<div class="slide"><img loading="lazy" src="https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0525/6965ebd35d804c278002ed66e6e3b983_hrs.jpg" alt="Фото 5"/></div>
+        <div class="nav">
+          <button id="prev">‹</button>
+          <button id="next">›</button>
+        </div>
+      </div>
+      <div class="thumbs" id="thumbs"><img class="active" data-idx="0" loading="lazy" src="https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0525/810eca1fce644292afedbae57583156b_hrs.jpg" alt="thumb 1"/>
+<img data-idx="1" loading="lazy" src="https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0525/d6f5056cd1754e629ff5426b41754806_hrs.jpg" alt="thumb 2"/>
+<img data-idx="2" loading="lazy" src="https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0525/501ec2f2e8c64aba80c6bb5ae771a854_hrs.jpg" alt="thumb 3"/>
+<img data-idx="3" loading="lazy" src="https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0525/0a908ea839e04285a5ac6f1cf0ed1931_hrs.jpg" alt="thumb 4"/>
+<img data-idx="4" loading="lazy" src="https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0525/6965ebd35d804c278002ed66e6e3b983_hrs.jpg" alt="thumb 5"/></div>
+    </section>
+    <section class="specs">
+      <div class="pills"><span class="pill">sedan</span><span class="pill">petrol</span><span class="pill">Бюджет: 10000-15000</span></div>
+      <table class="table">
+        <tr><th>Кузов</th><td>sedan</td></tr>
+        <tr><th>Топливо</th><td>petrol</td></tr>
+        <tr><th>Привод</th><td></td></tr>
+        <tr><th>Регион</th><td></td></tr>
+        <tr><th>Бюджет</th><td>10000-15000</td></tr>
+      </table>
+    </section>
+  </main>
+<script>
+(function(){
+  const slides=[...document.querySelectorAll('.slide')];
+  const thumbs=[...document.querySelectorAll('.thumbs img')];
+  let i=0;
+  const show=(n)=>{i=(n+slides.length)%slides.length;slides.forEach((s,j)=>s.classList.toggle('active',j===i));thumbs.forEach((t,j)=>t.classList.toggle('active',j===i));};
+  document.getElementById('prev').addEventListener('click',()=>show(i-1));
+  document.getElementById('next').addEventListener('click',()=>show(i+1));
+  thumbs.forEach(t=>t.addEventListener('click',()=>show(parseInt(t.dataset.idx,10))));
+  show(0);
+})();
+</script>
+</body>
+</html>
