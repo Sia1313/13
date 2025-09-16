@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>RIVIAN R1T R1T</title>
+  <link rel="stylesheet" href="../assets/style.css"/>
+</head>
+<body class="detail">
+  <header class="topbar">
+    <a class="back" href="../index.html">← Каталог</a>
+    <div class="brand">RIVIAN R1T R1T</div>
+  </header>
+  <main class="wrap">
+    <section class="gallery">
+      <div class="slider" id="slider">
+        <div class="slide active"><img loading="lazy" src="https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0825/09c436a2a08a484fa01483cf84dd7122_hrs.jpg" alt="Фото 1"/></div>
+<div class="slide"><img loading="lazy" src="https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0825/09ab679a0866439597b475d3e037b27c_hrs.jpg" alt="Фото 2"/></div>
+<div class="slide"><img loading="lazy" src="https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0825/f8b169a597b8410fa87571751a584ad8_hrs.jpg" alt="Фото 3"/></div>
+<div class="slide"><img loading="lazy" src="https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0825/26cf6ec446234f3394041844be5cff9b_hrs.jpg" alt="Фото 4"/></div>
+        <div class="nav">
+          <button id="prev">‹</button>
+          <button id="next">›</button>
+        </div>
+      </div>
+      <div class="thumbs" id="thumbs"><img class="active" data-idx="0" loading="lazy" src="https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0825/09c436a2a08a484fa01483cf84dd7122_hrs.jpg" alt="thumb 1"/>
+<img data-idx="1" loading="lazy" src="https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0825/09ab679a0866439597b475d3e037b27c_hrs.jpg" alt="thumb 2"/>
+<img data-idx="2" loading="lazy" src="https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0825/f8b169a597b8410fa87571751a584ad8_hrs.jpg" alt="thumb 3"/>
+<img data-idx="3" loading="lazy" src="https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0825/26cf6ec446234f3394041844be5cff9b_hrs.jpg" alt="thumb 4"/></div>
+    </section>
+    <section class="specs">
+      <div class="pills"><span class="pill">crossover</span><span class="pill">petrol</span><span class="pill">Бюджет: 25000-30000</span></div>
+      <table class="table">
+        <tr><th>Кузов</th><td>crossover</td></tr>
+        <tr><th>Топливо</th><td>petrol</td></tr>
+        <tr><th>Привод</th><td></td></tr>
+        <tr><th>Регион</th><td></td></tr>
+        <tr><th>Бюджет</th><td>25000-30000</td></tr>
+      </table>
+    </section>
+  </main>
+<script>
+(function(){
+  const slides=[...document.querySelectorAll('.slide')];
+  const thumbs=[...document.querySelectorAll('.thumbs img')];
+  let i=0;
+  const show=(n)=>{i=(n+slides.length)%slides.length;slides.forEach((s,j)=>s.classList.toggle('active',j===i));thumbs.forEach((t,j)=>t.classList.toggle('active',j===i));};
+  document.getElementById('prev').addEventListener('click',()=>show(i-1));
+  document.getElementById('next').addEventListener('click',()=>show(i+1));
+  thumbs.forEach(t=>t.addEventListener('click',()=>show(parseInt(t.dataset.idx,10))));
+  show(0);
+})();
+</script>
+</body>
+</html>

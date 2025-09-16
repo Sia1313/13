@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Tesla Cybertruck</title>
+  <link rel="stylesheet" href="../assets/style.css"/>
+</head>
+<body class="detail">
+  <header class="topbar">
+    <a class="back" href="../index.html">← Каталог</a>
+    <div class="brand">Tesla Cybertruck</div>
+  </header>
+  <main class="wrap">
+    <section class="gallery">
+      <div class="slider" id="slider">
+        <div class="slide active"><img loading="lazy" src="https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0725/d30c6aeb951e4673a8b436182da27f57_hrs.jpg" alt="Фото 1"/></div>
+<div class="slide"><img loading="lazy" src="https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0725/54eb33064a98474db0943ba98d5e4db3_hrs.jpg" alt="Фото 2"/></div>
+<div class="slide"><img loading="lazy" src="https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0725/066bb3573e3040c6953198a1dc2e8319_hrs.jpg" alt="Фото 3"/></div>
+<div class="slide"><img loading="lazy" src="https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0725/febab9409d9a4de0b02b84bb049dbc19_hrs.jpg" alt="Фото 4"/></div>
+        <div class="nav">
+          <button id="prev">‹</button>
+          <button id="next">›</button>
+        </div>
+      </div>
+      <div class="thumbs" id="thumbs"><img class="active" data-idx="0" loading="lazy" src="https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0725/d30c6aeb951e4673a8b436182da27f57_hrs.jpg" alt="thumb 1"/>
+<img data-idx="1" loading="lazy" src="https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0725/54eb33064a98474db0943ba98d5e4db3_hrs.jpg" alt="thumb 2"/>
+<img data-idx="2" loading="lazy" src="https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0725/066bb3573e3040c6953198a1dc2e8319_hrs.jpg" alt="thumb 3"/>
+<img data-idx="3" loading="lazy" src="https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0725/febab9409d9a4de0b02b84bb049dbc19_hrs.jpg" alt="thumb 4"/></div>
+    </section>
+    <section class="specs">
+      <div class="pills"><span class="pill">sedan</span><span class="pill">petrol</span><span class="pill">Бюджет: 15000-20000</span></div>
+      <table class="table">
+        <tr><th>Кузов</th><td>sedan</td></tr>
+        <tr><th>Топливо</th><td>petrol</td></tr>
+        <tr><th>Привод</th><td></td></tr>
+        <tr><th>Регион</th><td></td></tr>
+        <tr><th>Бюджет</th><td>15000-20000</td></tr>
+      </table>
+    </section>
+  </main>
+<script>
+(function(){
+  const slides=[...document.querySelectorAll('.slide')];
+  const thumbs=[...document.querySelectorAll('.thumbs img')];
+  let i=0;
+  const show=(n)=>{i=(n+slides.length)%slides.length;slides.forEach((s,j)=>s.classList.toggle('active',j===i));thumbs.forEach((t,j)=>t.classList.toggle('active',j===i));};
+  document.getElementById('prev').addEventListener('click',()=>show(i-1));
+  document.getElementById('next').addEventListener('click',()=>show(i+1));
+  thumbs.forEach(t=>t.addEventListener('click',()=>show(parseInt(t.dataset.idx,10))));
+  show(0);
+})();
+</script>
+</body>
+</html>
