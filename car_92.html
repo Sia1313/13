@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Mercedes-Benz GLE (2017–2019)</title>
+  <link rel="stylesheet" href="../assets/style.css"/>
+</head>
+<body class="detail">
+  <header class="topbar">
+    <a class="back" href="../index.html">← Каталог</a>
+    <div class="brand">Mercedes-Benz GLE (2017–2019)</div>
+  </header>
+  <main class="wrap">
+    <section class="gallery">
+      <div class="slider" id="slider">
+        <div class="slide active"><img loading="lazy" src="https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0725/0a77800fbc9340e18274494f8c24e8cb_hrs.jpg" alt="Фото 1"/></div>
+<div class="slide"><img loading="lazy" src="https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0725/901a64b39b044132aebf978a74dca086_hrs.jpg" alt="Фото 2"/></div>
+<div class="slide"><img loading="lazy" src="https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0725/aa2ffc8d232349668fcf76b2d843dd1e_hrs.jpg" alt="Фото 3"/></div>
+<div class="slide"><img loading="lazy" src="https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0725/3408c0f9d3e643ab86f499a22e51d9fa_hrs.jpg" alt="Фото 4"/></div>
+<div class="slide"><img loading="lazy" src="https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0725/e7c51d7f58564c14811db90c120352c7_hrs.jpg" alt="Фото 5"/></div>
+        <div class="nav">
+          <button id="prev">‹</button>
+          <button id="next">›</button>
+        </div>
+      </div>
+      <div class="thumbs" id="thumbs"><img class="active" data-idx="0" loading="lazy" src="https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0725/0a77800fbc9340e18274494f8c24e8cb_hrs.jpg" alt="thumb 1"/>
+<img data-idx="1" loading="lazy" src="https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0725/901a64b39b044132aebf978a74dca086_hrs.jpg" alt="thumb 2"/>
+<img data-idx="2" loading="lazy" src="https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0725/aa2ffc8d232349668fcf76b2d843dd1e_hrs.jpg" alt="thumb 3"/>
+<img data-idx="3" loading="lazy" src="https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0725/3408c0f9d3e643ab86f499a22e51d9fa_hrs.jpg" alt="thumb 4"/>
+<img data-idx="4" loading="lazy" src="https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0725/e7c51d7f58564c14811db90c120352c7_hrs.jpg" alt="thumb 5"/></div>
+    </section>
+    <section class="specs">
+      <div class="pills"><span class="pill">crossover</span><span class="pill">petrol</span><span class="pill">Бюджет: 20000-25000</span></div>
+      <table class="table">
+        <tr><th>Кузов</th><td>crossover</td></tr>
+        <tr><th>Топливо</th><td>petrol</td></tr>
+        <tr><th>Привод</th><td></td></tr>
+        <tr><th>Регион</th><td></td></tr>
+        <tr><th>Бюджет</th><td>20000-25000</td></tr>
+      </table>
+    </section>
+  </main>
+<script>
+(function(){
+  const slides=[...document.querySelectorAll('.slide')];
+  const thumbs=[...document.querySelectorAll('.thumbs img')];
+  let i=0;
+  const show=(n)=>{i=(n+slides.length)%slides.length;slides.forEach((s,j)=>s.classList.toggle('active',j===i));thumbs.forEach((t,j)=>t.classList.toggle('active',j===i));};
+  document.getElementById('prev').addEventListener('click',()=>show(i-1));
+  document.getElementById('next').addEventListener('click',()=>show(i+1));
+  thumbs.forEach(t=>t.addEventListener('click',()=>show(parseInt(t.dataset.idx,10))));
+  show(0);
+})();
+</script>
+</body>
+</html>
